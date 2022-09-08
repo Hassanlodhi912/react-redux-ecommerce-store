@@ -9,8 +9,8 @@ const Router = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<ProductListing />} />
-                <Route path="/productDetail" element={<ProductDetail />} />
-                <Route>404 Not Found! </Route>
+                <Route path="/product/:productId" element={<ProductDetail />} />
+               
             </Routes>
         </BrowserRouter>
 

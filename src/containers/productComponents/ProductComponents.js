@@ -1,19 +1,20 @@
 import { useSelector } from 'react-redux'
-import "./ProductComponents.css";
-import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, Grid } from '@mui/material';
+import { CardActionArea } from '@mui/material';
+import  {Link} from "react-router-dom"
 const ProductComponents = () => {
-    const products = useSelector((state) => state.allProducts.products)
-    const renderList = products.map((products) => {
-        const { id, title, category, price, image } = products;
+    const products = useSelector((state) => state.allProducts.products);
+    const renderList = products.map((product) => {
+
+        const { id, title, category, price, image }=product;
         return (
             <div>
-                
-                        <Card sx={{ maxWidth: 240, marginTop: "20px" }} key={id}>
+   
+                        <Card sx={{ maxWidth: 240, marginTop:"40px" }} key={id}>
+                        <Link to ={`/product/${id}`} >
                             <CardActionArea>
                                 <CardMedia
                                     component="img"
@@ -33,8 +34,9 @@ const ProductComponents = () => {
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
-                        </Card>
+                        </Link>
 
+                        </Card>
 
                 
             </div>
