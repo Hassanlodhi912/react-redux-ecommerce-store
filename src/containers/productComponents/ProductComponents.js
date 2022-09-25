@@ -32,6 +32,7 @@ const ProductComponents = () => {
                                     <Typography variant="body2" color="text.secondary">
                                         {category}
                                     </Typography>
+                                    
                                 </CardContent>
                             </CardActionArea>
                         </Link>
